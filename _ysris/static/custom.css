@@ -1,0 +1,31 @@
+body {
+    background:#181A1B;    
+}
+
+a {
+    color:#DCD9D4 !important;
+}
+
+p {
+    color:#D6D3CD !important;
+}
+
+.content-subhead {
+border-bottom: 1px solid #363636 !important;
+
+}
+
+pre, code {
+    color: #D6D3CD !important;
+    background:#232527 !important;
+    
+}
+
+.post-share-links, pre
+{
+    border:1px #3D3D3D solid !important; 
+}
+
+.sidebar {
+    background: #322572 !important;
+}

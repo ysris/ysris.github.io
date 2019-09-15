@@ -1,6 +1,6 @@
 baseURL = "https://ysris.github.io/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Ysris Brew"
 theme = "purehugo"
 
 [params]  

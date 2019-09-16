@@ -1,7 +1,7 @@
 baseURL = "https://ysris.github.io/"
 languageCode = "en-us"
 title = "Ysris Brew"
-theme = "purehugo"
+theme = "ysris"
 
 [params]  
 hideShareOptions = true

@@ -155,7 +155,7 @@ SQL est un langage basé sur les principes d’algèbre relationnelle (<a href="
 , (<span style="color:#ae81ff">3</span>,<span style="color:#e6db74">&#39;TTHHJJKKLL&#39;</span>)</code></pre></div></p>
 
 <p>Update
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">update</span> CustomerClientHasAccountingAccount 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">update</span> thetable 
 <span style="color:#66d9ef">set</span> customerId <span style="color:#f92672">=</span> (<span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> dbo.customer <span style="color:#66d9ef">where</span> email <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;accountingAccountDefaultTemplate&#39;</span>)
 <span style="color:#66d9ef">where</span> customerId <span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span></code></pre></div></p>
 
@@ -163,8 +163,8 @@ SQL est un langage basé sur les principes d’algèbre relationnelle (<a href="
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">Delete</span> <span style="color:#66d9ef">from</span><span style="color:#960050;background-color:#1e0010">…</span></code></pre></div></p>
 
 <p>Delete avec une clause join
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">delete</span> DocumentUpdateConversationMessageItems
-<span style="color:#66d9ef">from</span> DocumentUpdateConversationMessageItems ducm
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">delete</span> xxx
+<span style="color:#66d9ef">from</span> xxx ducm
 <span style="color:#66d9ef">join</span> [dbo].[conversationmessage] cm <span style="color:#66d9ef">on</span> cm.id <span style="color:#f92672">=</span> ducm.conversationMessageId
 <span style="color:#66d9ef">where</span> destId <span style="color:#66d9ef">IN</span> (<span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> [dbo].[customer] <span style="color:#66d9ef">where</span> rolesstring<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;CompanyClient&#39;</span>)</code></pre></div></p>
 
@@ -203,8 +203,8 @@ CREATE TABLE customers (email NVARCHAR(255), passhash NVARCHAR(255))</p>
 <p>Le langage de contrôle d’accès : privilèges
 <a href="https://docs.microsoft.com/en-us/sql/relational-databases/indexes/create-nonclustered-indexes?view=sql-server-2017">https://docs.microsoft.com/en-us/sql/relational-databases/indexes/create-nonclustered-indexes?view=sql-server-2017</a>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> LOGIN thelogin <span style="color:#66d9ef">WITH</span> PASSWORD <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;supersecurepassword&#39;</span>;
-<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> counteo_fiduciaireduleman_staging_webuser <span style="color:#66d9ef">FOR</span> LOGIN counteo_fiduciaireduleman_staging_webuser <span style="color:#66d9ef">WITH</span> DEFAULT_SCHEMA <span style="color:#f92672">=</span> dbo
-<span style="color:#66d9ef">GRANT</span> CONTROL <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">DATABASE</span>::counteo_fiduciaireduleman_staging <span style="color:#66d9ef">TO</span> counteo_fiduciaireduleman_staging_webuser </code></pre></div></p>
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> theuser <span style="color:#66d9ef">FOR</span> LOGIN thelogin <span style="color:#66d9ef">WITH</span> DEFAULT_SCHEMA <span style="color:#f92672">=</span> dbo
+<span style="color:#66d9ef">GRANT</span> CONTROL <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">DATABASE</span>::thedatabase <span style="color:#66d9ef">TO</span> theuser </code></pre></div></p>
 
 <p>Le langage de logique : variables, fonctions, curseurs(meh)</p>
 

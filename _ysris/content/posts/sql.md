@@ -83,7 +83,7 @@ VALUES
 
 Update
 {{< highlight sql >}}
-update CustomerClientHasAccountingAccount 
+update thetable 
 set customerId = (select id from dbo.customer where email = 'accountingAccountDefaultTemplate')
 where customerId = 40
 {{< /highlight >}}
@@ -95,8 +95,8 @@ Delete from…
 
 Delete avec une clause join
 {{< highlight sql >}}
-delete DocumentUpdateConversationMessageItems
-from DocumentUpdateConversationMessageItems ducm
+delete xxx
+from xxx ducm
 join [dbo].[conversationmessage] cm on cm.id = ducm.conversationMessageId
 where destId IN (select id from [dbo].[customer] where rolesstring='CompanyClient')
 {{< /highlight >}}
@@ -144,8 +144,8 @@ Le langage de contrôle d’accès : privilèges
 https://docs.microsoft.com/en-us/sql/relational-databases/indexes/create-nonclustered-indexes?view=sql-server-2017
 {{< highlight sql >}}
 CREATE LOGIN thelogin WITH PASSWORD = 'supersecurepassword';
-CREATE USER counteo_fiduciaireduleman_staging_webuser FOR LOGIN counteo_fiduciaireduleman_staging_webuser WITH DEFAULT_SCHEMA = dbo
-GRANT CONTROL ON DATABASE::counteo_fiduciaireduleman_staging TO counteo_fiduciaireduleman_staging_webuser 
+CREATE USER theuser FOR LOGIN thelogin WITH DEFAULT_SCHEMA = dbo
+GRANT CONTROL ON DATABASE::thedatabase TO theuser 
 {{< /highlight >}}
 	
 
